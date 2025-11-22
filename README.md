@@ -2,6 +2,8 @@
 
 ## Getting started
 
+### Setup `jedi-traefik`
+
 Ensure you've set up the `jedi-traefik` service from
 the [traefik](https://github.com/sajadtorkamani/jedi-traefik/tree/master)
 project.
@@ -9,7 +11,15 @@ project.
 If you see the Traefik admin dashboard at http://localhost:8080, you should be
 setup.
 
-Once Traefik is set up, run the below to start this project's container:
+### Setup env variables
+
+Copy `.env` to `.env.local` and set all values.
+
+```shell
+cp .env.example .env
+```
+
+### Start services
 
 ```shell
 docker compose up -d
