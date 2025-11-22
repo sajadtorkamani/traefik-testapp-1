@@ -9,6 +9,7 @@ services:
       - "traefik.http.routers.traefik-test.entrypoints=websecure"
       - "traefik.http.routers.traefik-test.rule=Host(`${APP_HOST}`)"
       - "traefik.http.routers.traefik-test.tls=true"
+      # On localhost, we already have certificates for  on the jedi-traefik repo via mkcert so the below resolver is never used
       - "traefik.http.routers.traefik-test.tls.certresolver=le"
 
     volumes:
