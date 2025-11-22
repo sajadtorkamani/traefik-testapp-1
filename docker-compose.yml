@@ -4,17 +4,11 @@ services:
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
-      -
+
       # HTTPS router
       - "traefik.http.routers.traefik-test.entrypoints=websecure"
       - "traefik.http.routers.traefik-test.rule=Host(`${APP_HOST}`)"
       - "traefik.http.routers.traefik-test.tls=true"
-      -
-      # HTTP router
-      - "traefik.http.routers.traefik-test-http.entrypoints=web"
-      - "traefik.http.routers.traefik-test-http.rule=Host(`${APP_HOST}`)"
-      - "traefik.http.routers.traefik-test-http.middlewares=redirect-to-https"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
 
     volumes:
       - ./:/var/www/html
