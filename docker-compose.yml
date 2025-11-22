@@ -1,16 +1,16 @@
 services:
-  traefik-test:
+  traefik-testapp-1:
     image: nginx:mainline-alpine
     restart: unless-stopped
     labels:
       - "traefik.enable=true"
 
       # HTTPS router
-      - "traefik.http.routers.traefik-test.entrypoints=websecure"
-      - "traefik.http.routers.traefik-test.rule=Host(`${APP_HOST}`)"
-      - "traefik.http.routers.traefik-test.tls=true"
+      - "traefik.http.routers.traefik-testapp-1.entrypoints=websecure"
+      - "traefik.http.routers.traefik-testapp-1.rule=Host(`${APP_HOST}`)"
+      - "traefik.http.routers.traefik-testapp-1.tls=true"
       # On localhost, we already have certificates for  on the jedi-traefik repo via mkcert so the below resolver is never used
-      - "traefik.http.routers.traefik-test.tls.certresolver=le"
+      - "traefik.http.routers.traefik-testapp-1.tls.certresolver=le"
 
     volumes:
       - ./:/var/www/html
