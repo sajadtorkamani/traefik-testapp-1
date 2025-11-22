@@ -6,7 +6,7 @@ Ensure you've set up the `jedi-traefik` service from the [traefik](https://githu
 
 If you see the Traefik admin dashboard at http://localhost:8080, you should be setup.
 
-Run:
+Once Traefik is set up, run:
 
 ```shell
 docker compose up -d
