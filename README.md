@@ -1,4 +1,4 @@
-# traefik-test
+# traefik-testapp-1
 
 ## Getting started
 
@@ -25,4 +25,4 @@ cp .env.example .env
 docker compose up -d
 ```
 
-Access http://traefik-test.localhost and you should see a success message.
+Access https://traefik-testapp-1.localhost and you should see a success message.
