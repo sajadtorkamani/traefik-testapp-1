@@ -10,10 +10,6 @@ services:
       - "traefik.http.routers.traefik-testapp-1.rule=Host(`${APP_HOST}`)"
       - "traefik.http.routers.traefik-testapp-1.tls=true"
 
-      # On localhost, we already have certificates for the host on the jedi-traefik
-      # repo via mkcert so the below resolver is never used
-      - "traefik.http.routers.traefik-testapp-1.tls.certresolver=le"
-
     volumes:
       - ./:/var/www/html
       - ./nginx.conf:/etc/nginx/conf.d/default.conf
